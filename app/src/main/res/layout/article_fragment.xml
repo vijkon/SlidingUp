@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="articles"
+                type="com.app.model.main.article.SelectedArticle"/>
+
+        <variable
+                name="routeInfo"
+                type="com.app.model.main.maps.RouteData"/>
+    </data>
+
+    <FrameLayout
+            android:id="@+id/main_fragment_container"
+            style="@style/MatchWidthHeight">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinator_layout"
+                style="@style/MatchWidthHeight"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include layout="@layout/bottom_sheet"
+                     app:articles="@{articles}"
+                     app:routeInfo="@{routeInfo}"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <ProgressBar
+                android:id="@+id/article_pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+    </FrameLayout>
+
+</layout>

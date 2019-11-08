@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+
+        <variable
+                name="articles"
+                type="com.app.model.main.article.SelectedArticle"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/article_layout"
+            style="@style/MatchWidthHeight"
+            android:orientation="vertical">
+
+        <TextView
+                style="@style/WrapWidthHeight"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@{articles.title}"
+                android:visibility="@{TextUtils.isEmpty(articles.title) ? View.GONE : View.VISIBLE}"
+                android:textColor="@color/navyBlueColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_dimen_19sp"/>
+
+        <TextView
+                style="@style/WrapWidthHeight"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@{articles.description}"
+                android:visibility="@{TextUtils.isEmpty(articles.description) ? View.GONE : View.VISIBLE}"
+                android:textColor="@color/navyBlueColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_dimen_19sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100dp"
+                android:layout_marginTop="@dimen/dimen_10dp"/>
+
+        <TextView
+                style="@style/WrapWidthHeight"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:text="@string/wikipedia"
+                android:textColor="@color/purpleColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_dimen_14sp"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_2dp"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:layout_gravity="center"
+                android:background="@android:color/white"/>
+
+        <Button
+                android:id="@+id/getThereBtn"
+                style="@style/bottomSheetButton"
+                android:text="@string/get_there"/>
+
+        <Button
+                android:id="@+id/routeSuggestionBtn"
+                style="@style/bottomSheetButton"
+                android:text="@string/route_suggestions"/>
+
+    </LinearLayout>
+
+</layout>

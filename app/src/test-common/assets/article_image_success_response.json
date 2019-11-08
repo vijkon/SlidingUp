@@ -1,0 +1,18 @@
+{
+  "batchcomplete":true,
+  "query":{
+    "pages":[
+      {
+        "ns":6,
+        "title":"File:800px-Hiekkaharju sijainti.PNG",
+        "missing":true,
+        "known":true,
+        "thumbnail":{
+          "source":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/800px-Hiekkaharju_sijainti.PNG/150px-800px-Hiekkaharju_sijainti.PNG",
+          "width":150,
+          "height":110
+        }
+      }
+    ]
+  }
+}

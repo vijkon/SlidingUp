@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+
+        <variable
+                name="routeInfo"
+                type="com.app.model.main.maps.RouteData"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/routeInfo_layout"
+            style="@style/MatchWidthHeight"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+        <TextView
+                style="@style/WrapWidthHeight"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@string/route_suggestions_info"
+                android:textColor="@color/navyBlueColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_dimen_19sp"/>
+
+        <LinearLayout
+                style="@style/MatchWidth"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:layout_weight="0.5"
+                    android:text="@string/starting_point"/>
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:text="@string/semi_colon"
+                    android:layout_weight="0.1"/>
+
+            <TextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1.4"
+                    android:text="@{routeInfo.startAddress}"
+                    android:visibility="@{TextUtils.isEmpty(routeInfo.startAddress) ? View.GONE : View.VISIBLE}"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:textColor="@color/navyBlueColor"
+                    android:textSize="@dimen/text_dimen_16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:layout_weight="0.5"
+                    android:text="@string/end_point"/>
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:text="@string/semi_colon"
+                    android:layout_weight="0.1"/>
+
+            <TextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1.4"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:text="@{routeInfo.endAddress}"
+                    android:visibility="@{TextUtils.isEmpty(routeInfo.endAddress) ? View.GONE : View.VISIBLE}"
+                    android:textColor="@color/navyBlueColor"
+                    android:textSize="@dimen/text_dimen_16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:layout_weight="0.5"
+                    android:text="@string/distance"/>
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:text="@string/semi_colon"
+                    android:layout_weight="0.1"/>
+
+            <TextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1.4"
+                    android:text="@{routeInfo.distance}"
+                    android:visibility="@{TextUtils.isEmpty(routeInfo.distance) ? View.GONE : View.VISIBLE}"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:textColor="@color/navyBlueColor"
+                    android:textSize="@dimen/text_dimen_16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:layout_weight="0.5"
+                    android:text="@string/duration"/>
+
+            <TextView
+                    style="@style/routeInfoTextView"
+                    android:text="@string/semi_colon"
+                    android:layout_weight="0.1"/>
+
+            <TextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1.4"
+                    android:text="@{routeInfo.duration}"
+                    android:visibility="@{TextUtils.isEmpty(routeInfo.duration) ? View.GONE : View.VISIBLE}"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:textColor="@color/navyBlueColor"
+                    android:textSize="@dimen/text_dimen_16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+         xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+
+        <variable
+                name="articles"
+                type="com.app.model.main.article.SelectedArticle"/>
+
+        <variable
+                name="routeInfo"
+                type="com.app.model.main.maps.RouteData"/>
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/bottom_sheet"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_500dp"
+            android:background="@color/purpleColorAlpha60"
+            app:behavior_peekHeight="@dimen/dimen_280dp"
+            app:layout_behavior="com.app.ui.main.maps.AnchorSheetBehavior">
+
+        <androidx.core.widget.NestedScrollView
+                style="@style/MatchWidthHeight">
+
+            <LinearLayout
+                    style="@style/MatchWidthHeight"
+                    android:layout_margin="@dimen/dimen_30dp"
+                    android:orientation="vertical">
+
+                <View
+                        android:layout_width="@dimen/dimen_150dp"
+                        android:layout_height="@dimen/dimen_2dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"/>
+
+                <include layout="@layout/article_layout"
+                         app:articles="@{articles}"/>
+
+                <include layout="@layout/routeinfo_layout"
+                         app:routeInfo="@{routeInfo}"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>
