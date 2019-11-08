@@ -1,4 +1,4 @@
-# SlidingUpAnimation-Android
+# SlidingUp-Android
 
 This android application has a google map which shows the near-by point of interest(POI) based on user current location. On 
 particular POI selection application shows details which include the title, description and the list of images of that POI. 
@@ -14,9 +14,6 @@ Distance to travel in Kilometres and Time to cover that distance.
 * __Fresco for Image Management__
 * __Unit Testing__
 * __Any Many More__
-
-# Demo
-![SlidingUpAnimation-Android](screenshots/sliding_up_video.gif)
 
 # Prerequisites
 * __Android Studio 3.4__
